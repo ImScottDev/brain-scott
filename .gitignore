@@ -1,0 +1,32 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Obsidian
+.obsidian/
+.trash/
+
+# Environment / credentials
+.env
+.env.*
+scripts/.env
+
+# Playwright
+.playwright-mcp/
+
+# Personal data (these are created by the user)
+pessoas/
+deals/
+empresas/
+reunioes/
+diario/
+conteudo/
+projetos/
+inbox/
+arquivo/
+referencias/
+assets/imagens/
+assets/thumbnails/
+
+# Memory (personal)
+.claude/projects/

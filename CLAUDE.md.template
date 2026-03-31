@@ -1,0 +1,30 @@
+# CLAUDE.md — Segundo Cérebro
+
+> Este é um template. O comando /vault-setup gera um CLAUDE.md personalizado para você.
+
+## Quem Sou
+[O /vault-setup preenche com base nas suas respostas]
+
+## Estrutura do Meu Vault
+```
+inbox/          Zona de entrada — tudo novo cai aqui primeiro
+diario/         Capturas rápidas e descargas mentais do dia
+pessoas/        Contatos com contexto
+deals/          Oportunidades e parcerias em aberto
+projetos/       Trabalho ativo com status e próximas ações
+conteudo/       Ideias, roteiros e referências de conteúdo
+reunioes/       Transcrições e resumos de reuniões processados
+empresas/       Empresas do portfólio ou parceiras
+referencias/    Posts, artigos e docs de referência
+arquivo/        Trabalho concluído — nunca deletado, só movido
+```
+
+## Como Trabalho
+[Inferido automaticamente pelo /vault-setup]
+
+## Regras de Contexto
+Quando mencionar um deal → verificar `deals/` primeiro
+Quando mencionar uma pessoa → verificar `pessoas/` primeiro
+Quando pedir para escrever conteúdo → ler `conteudo/` e calibrar com a voz do canal
+Quando mandar transcrição de reunião → processar com `/reuniao` e salvar em `reunioes/`
+Quando algo cair no `inbox/` → perguntar se quer organizar agora
