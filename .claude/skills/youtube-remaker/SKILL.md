@@ -1,6 +1,6 @@
 ---
 name: youtube-remaker
-description: Recebe URL do YouTube, baixa thumb, transcreve, reescreve na voz do Marcelo, gera 3 thumbs com clone, monta slides e organiza tudo em um canvas Obsidian.
+description: Recebe URL do YouTube, baixa thumb, transcreve, reescreve na sua voz, gera 3 thumbs com clone, monta slides e organiza tudo em um canvas Obsidian.
 ---
 
 ## Workflow
@@ -31,31 +31,31 @@ python3 <vault>/.claude/skills/transcribe/scripts/transcribe_url.py "URL" --time
 
 Salvar a transcrição em `conteudo/yt-remake/YYYY-MM-DD-slug/transcricao.md`
 
-### 4. Reescrever na voz do Marcelo
+### 4. Reescrever na sua voz
 
-Ler o guia de voz em `conteudo/voz-marcelo.md` e reescrever o conteúdo do vídeo:
+Ler o guia de voz em `conteudo/voz-usuario.md` e reescrever o conteudo do video:
 
-- Manter os pontos principais e insights do vídeo original
-- Adaptar 100% para a voz do Marcelo (bastidor, "cara", "mano", "que foda", analogias do cotidiano)
-- Usar a estrutura de hook que o Marcelo usa (cenário hipotético, contraste, analogia inédita)
-- NÃO usar: tom de professor, listas numeradas narradas, linguagem formal, hook forçado
-- Incluir onde o Marcelo adicionaria sua experiência pessoal ("já implementei mais de 200 agentes...")
+- Manter os pontos principais e insights do video original
+- Adaptar 100% para a sua voz (usar o guia de voz como referencia de tom, expressoes e estilo)
+- Usar a estrutura de hook definida no guia de voz (cenario hipotetico, contraste, analogia inedita)
+- NAO usar: tom de professor, listas numeradas narradas, linguagem formal, hook forcado
+- Incluir onde voce adicionaria sua experiencia pessoal (casos reais, contexto proprio)
 - Formato: roteiro completo pronto pra gravar
 
-Salvar em `conteudo/yt-remake/YYYY-MM-DD-slug/roteiro-marcelo.md`
+Salvar em `conteudo/yt-remake/YYYY-MM-DD-slug/roteiro-usuario.md`
 
 ### 5. Gerar 3 thumbnails com clone
 
 #### Carregar referências
 1. Ler a thumbnail original baixada no passo 2
-2. Ler TODAS as imagens da pasta `refs/clone-marcelo/` — essas são fotos de referência do Marcelo
+2. Ler TODAS as imagens da pasta `refs/clone-usuario/` — essas sao fotos de referencia do usuario
 
 #### Gerar via Gemini (NanoBanana)
 
 Para cada uma das 3 variações, montar um prompt que:
 - Descreve o layout e estilo visual da thumb original (cores, composição, elementos gráficos, texto)
-- Substitui a pessoa original pelo Marcelo (usando as fotos de referência como guia de aparência)
-- Se a thumb original não tinha pessoa, adiciona o Marcelo integrado ao layout
+- Substitui a pessoa original pelo usuario (usando as fotos de referencia como guia de aparencia)
+- Se a thumb original nao tinha pessoa, adiciona o usuario integrado ao layout
 - Mantém o formato 16:9 (1280x720)
 - Cada variação muda algo: ângulo, expressão, composição ou destaque visual
 
@@ -63,7 +63,7 @@ Para cada uma das 3 variações, montar um prompt que:
 
 ```bash
 # Primeiro, converter imagens para base64
-CLONE_B64=$(base64 -i "refs/clone-marcelo/PRIMEIRA_FOTO.png")
+CLONE_B64=$(base64 -i "refs/clone-usuario/PRIMEIRA_FOTO.png")
 THUMB_B64=$(base64 -i "thumb-original.png")
 
 curl -s "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image-preview:generateContent" \
@@ -104,8 +104,8 @@ Crie uma thumbnail de YouTube 16:9 (1280x720).
 REFERÊNCIA VISUAL: a primeira imagem é a thumbnail original. Mantenha o mesmo estilo visual:
 cores, composição, elementos gráficos, textos sobrepostos e mood geral.
 
-PESSOA: a segunda imagem é a foto de referência do Marcelo. Substitua a pessoa da thumb original
-pelo Marcelo (ou adicione-o se não havia pessoa). Mantenha a aparência fiel: rosto, cabelo, estilo.
+PESSOA: a segunda imagem e a foto de referencia do usuario. Substitua a pessoa da thumb original
+pelo usuario (ou adicione-o se nao havia pessoa). Mantenha a aparencia fiel: rosto, cabelo, estilo.
 
 VARIAÇÃO [1/2/3]: [descrever a variação específica — ângulo, expressão, composição]
 
@@ -127,7 +127,7 @@ Ler branding em `conteudo/live-2026-03-19/ref/branding-nanobanana.md` se existir
 - Visual minimalista, muito espaço negativo
 
 Slides sugeridos:
-1. **Título** — nome do vídeo reescrito no tom do Marcelo
+1. **Titulo** — nome do video reescrito no tom do usuario
 2. **Problema/contexto** — qual dor ou curiosidade o vídeo resolve
 3. **Sacada principal** — o insight mais forte do conteúdo
 4. **CTA** — chamada para ação (se inscrever, comentar, link)
@@ -145,7 +145,7 @@ Criar um arquivo `.canvas` (formato JSON do Obsidian) que organiza tudo visualme
     {"id": "2", "type": "file", "file": "PATH/thumb-v1.png", "x": 450, "y": 0, "width": 400, "height": 225},
     {"id": "3", "type": "file", "file": "PATH/thumb-v2.png", "x": 450, "y": 260, "width": 400, "height": 225},
     {"id": "4", "type": "file", "file": "PATH/thumb-v3.png", "x": 450, "y": 520, "width": 400, "height": 225},
-    {"id": "5", "type": "file", "file": "PATH/roteiro-marcelo.md", "x": 900, "y": 0, "width": 500, "height": 400},
+    {"id": "5", "type": "file", "file": "PATH/roteiro-usuario.md", "x": 900, "y": 0, "width": 500, "height": 400},
     {"id": "6", "type": "file", "file": "PATH/transcricao.md", "x": 900, "y": 440, "width": 500, "height": 300},
     {"id": "7", "type": "file", "file": "PATH/slide-01.png", "x": 0, "y": 300, "width": 400, "height": 225},
     {"id": "8", "type": "file", "file": "PATH/slide-02.png", "x": 0, "y": 560, "width": 400, "height": 225}
@@ -172,7 +172,7 @@ YouTube Remaker — Concluído
   - thumb-original.png (baixada)
   - thumb-v1.png, thumb-v2.png, thumb-v3.png (com clone)
   - transcricao.md (transcrição completa)
-  - roteiro-marcelo.md (reescrito na voz do Marcelo)
+  - roteiro-usuario.md (reescrito na sua voz)
   - slide-01.png ... slide-0X.png (slides de contexto)
   - remake.canvas (visualização no Obsidian)
 
@@ -181,8 +181,8 @@ YouTube Remaker — Concluído
 
 ## Regras
 
-- Sempre ler `conteudo/voz-marcelo.md` antes de reescrever — é o DNA do roteiro
-- Sempre ler TODAS as fotos em `refs/clone-marcelo/` para referência visual
-- Se `refs/clone-marcelo/` estiver vazia → avisar o usuário para adicionar fotos antes de gerar thumbs
+- Sempre ler `conteudo/voz-usuario.md` antes de reescrever — é o DNA do roteiro
+- Sempre ler TODAS as fotos em `refs/clone-usuario/` para referência visual
+- Se `refs/clone-usuario/` estiver vazia → avisar o usuário para adicionar fotos antes de gerar thumbs
 - Manter estrutura de pastas limpa: uma pasta por remake
 - O canvas deve referenciar caminhos relativos ao vault (sem path absoluto)

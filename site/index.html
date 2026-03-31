@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vault Setup — Seu Segundo Cérebro com IA</title>
-  <meta name="description" content="Um comando. Um vault completo com IA embutida. Exclusivo para membros CODA.">
+  <title>Brain Scott by Scott Studio — Seu Segundo Cerebro com IA</title>
+  <meta name="description" content="Brain Scott by Scott Studio. Um comando. Um vault completo com IA embutida.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -503,7 +503,7 @@
         <span class="logo-icon">/</span>
         vault-setup
       </a>
-      <span class="nav-badge">Exclusivo CODA</span>
+      <span class="nav-badge">Scott Studio</span>
     </div>
   </nav>
 
@@ -669,7 +669,7 @@
     <div class="container">
       <div class="gate-box" id="gate-form">
         <h2>Acesse o prompt</h2>
-        <p>Exclusivo para membros da Comunidade CODA.</p>
+        <p>Exclusivo para membros Scott Studio.</p>
 
         <form id="access-form" onsubmit="return handleSubmit(event)">
           <div class="form-group">
@@ -681,11 +681,11 @@
             <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
           </div>
           <div class="form-group">
-            <label for="codigo">Código de membro CODA</label>
-            <input type="text" id="codigo" placeholder="CODA-XXXX" required>
+            <label for="codigo">Codigo de acesso</label>
+            <input type="text" id="codigo" placeholder="SCOTT-XXXX" required>
           </div>
           <button type="submit" class="btn-primary" id="submit-btn">Liberar prompt</button>
-          <p class="form-error" id="form-error">Código inválido. Verifique seu acesso na comunidade.</p>
+          <p class="form-error" id="form-error">Codigo invalido. Verifique seu acesso.</p>
           <p class="form-note">Seus dados ficam seguros. Usamos apenas para contato da comunidade.</p>
         </form>
       </div>
@@ -717,10 +717,10 @@
   <!-- CTA for non-members -->
   <section class="cta-banner">
     <div class="container">
-      <h2>Ainda não é membro CODA?</h2>
-      <p>Acesse o vault-setup, skills exclusivas, calls semanais e uma comunidade de builders.</p>
-      <a href="https://comunidadecoda.com" class="btn-outline" target="_blank">
-        Entrar na CODA
+      <h2>Quer acesso?</h2>
+      <p>Acesse o vault-setup, skills exclusivas e uma comunidade de builders.</p>
+      <a href="https://scottstudio.com.br" class="btn-outline" target="_blank">
+        Scott Studio
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
       </a>
     </div>
@@ -729,24 +729,12 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p><a href="https://comunidadecoda.com">Comunidade CODA</a> &middot; <a href="https://instagram.com/celoia">@celoia</a> &middot; <a href="https://youtube.com/@celoanders">YouTube</a></p>
+      <p><a href="https://scottstudio.com.br">Scott Studio</a> &middot; <a href="https://instagram.com/scottstudio">@scottstudio</a> &middot; <a href="https://youtube.com/@scottstudio">YouTube</a></p>
     </div>
   </footer>
 
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1199614378426776');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1199614378426776&ev=PageView&noscript=1"/></noscript>
+  <!-- Meta Pixel: insira seu pixel ID aqui -->
+  <!-- <script>fbq('init', 'SEU_PIXEL_ID_AQUI');</script> -->
 
   <script>
     // The full prompt text (vault-setup SKILL.md content)
@@ -855,8 +843,9 @@ Seus slash commands:
 
 Tem arquivos para importar? Cole na pasta inbox/ e diga "Organize tudo no inbox/ nas pastas certas"`;
 
-    // Valid CODA codes — replace with real validation later
-    const VALID_CODES = ['CODA-2026', 'CODA-LIVE', 'CODA-BETA'];
+    // Substituir por validacao real (API, banco, etc) -- codigos de acesso
+    // Substituir por validacao real (API, banco, etc)
+    const VALID_CODES = ['PLACEHOLDER'];
 
     function handleSubmit(e) {
       e.preventDefault();
@@ -876,7 +865,7 @@ Tem arquivos para importar? Cole na pasta inbox/ e diga "Organize tudo no inbox/
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead', {
           content_name: 'vault-setup-prompt',
-          content_category: 'coda-member'
+          content_category: 'member'
         });
       }
 

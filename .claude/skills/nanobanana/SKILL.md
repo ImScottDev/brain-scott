@@ -7,7 +7,7 @@ Gera imagens/slides usando a API do NanoBanana (Nano Banana 2 — modelo `gemini
 
 ## Fluxo
 
-1. Perguntar ao Marcelo: **"Qual bloco ou tema quer gerar?"** (ex: fundamentos, skills, cases, monetização, comunidade, ou tema livre)
+1. Perguntar ao usuario: **"Qual bloco ou tema quer gerar?"** (ex: fundamentos, skills, cases, monetizacao, comunidade, ou tema livre)
 2. Ler o arquivo de branding em `conteudo/live-2026-03-19/ref/branding-nanobanana.md` para pegar o estilo visual
 3. Ler o conteúdo do bloco correspondente (ex: `conteudo/live-2026-03-19/01-fundamentos/o-que-e-ide.md`)
 4. Ler referências visuais em `conteudo/live-2026-03-19/ref/` se houver imagens relevantes

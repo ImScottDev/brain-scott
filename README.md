@@ -1,124 +1,133 @@
-# Brain Scott - Segundo Cerebro com Claude Code + Obsidian
+# Brain Scott - Seu Segundo Cerebro com IA
 
 **by Scott Studio**
 
-> Um comando. Um vault Obsidian completo com IA embutida.
-> Estrutura de pastas, `CLAUDE.md`, slash commands e memoria persistente — tudo configurado automaticamente.
+> Imagina abrir o computador e a IA ja saber quem voce e, o que voce faz, seus projetos, seus clientes, suas prioridades do dia.
+>
+> Isso e o Brain Scott.
 
 ---
 
-## O que e isso?
+## O problema
 
-Brain Scott e um kit open-source que transforma o [Obsidian](https://obsidian.md) em um segundo cerebro turbinado com IA. Usando o [Claude Code](https://docs.anthropic.com/en/docs/claude-code), voce roda um unico comando e ganha:
+Voce tem anotacoes espalhadas em 5 apps diferentes. Nenhuma IA te conhece de verdade. Toda conversa com ChatGPT comeca do zero. Voce perde contexto, perde tempo, perde oportunidades.
 
-- Vault Obsidian estruturado e personalizado pro seu perfil
-- `CLAUDE.md` — o Claude te conhece desde a primeira conversa
-- Slash commands prontos (`/diario`, `/tldr`, `/deal`, `/reuniao`...)
-- Memoria persistente entre sessoes — preferencias, contexto, decisoes
+## A solucao
 
-Funciona pra qualquer perfil: dono de negocio, dev, criador de conteudo, consultor, estudante.
+Brain Scott transforma o [Obsidian](https://obsidian.md) (app gratuito) no seu **segundo cerebro** — e conecta ele ao [Claude Code](https://docs.anthropic.com/en/docs/claude-code), a IA mais avancada do mercado.
+
+Com **um unico comando**, voce ganha:
+
+- Um segundo cerebro organizado e personalizado pro seu perfil
+- IA que te conhece desde a primeira conversa
+- Comandos prontos pra rotina: briefing do dia, resumo de reuniao, gestao de deals
+- Memoria entre sessoes — a IA lembra tudo que voce ja conversou
+
+**Funciona pra qualquer perfil:** dono de negocio, freelancer, criador de conteudo, consultor, dev, estudante.
 
 ---
 
-## Quick Start
+## Como comecar (5 minutos)
 
-### 1. Pre-requisitos
+### 1. Instale o necessario
 
-- [Obsidian](https://obsidian.md) (gratis)
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (CLI do Claude)
+- [Obsidian](https://obsidian.md) — gratuito, roda em qualquer sistema
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — CLI do Claude (precisa de conta Anthropic)
 
-### 2. Crie a pasta do vault
+### 2. Crie a pasta do seu segundo cerebro
 
 ```bash
-mkdir ~/meu-vault && cd ~/meu-vault
+mkdir ~/meu-cerebro && cd ~/meu-cerebro
 ```
 
-### 3. Copie as skills para o vault
+### 3. Baixe o Brain Scott
 
 ```bash
-# Clone o repo
 git clone https://github.com/ImScottDev/brain-scott.git
-
-# Copie a pasta de skills pro seu vault
-cp -r brain-scott/.claude ~/meu-vault/
+cp -r brain-scott/.claude ~/meu-cerebro/
 ```
 
-### 4. Rode o setup no Claude Code
+### 4. Rode o setup
 
 ```bash
 claude
 ```
 
-Dentro do Claude Code, rode:
+Dentro do Claude Code, digite:
 
 ```
 /vault-setup
 ```
 
-O Claude vai te perguntar quem voce e e o que faz. Responda em texto livre — algumas frases bastam. Ele monta tudo automaticamente.
+A IA vai te fazer algumas perguntas sobre quem voce e e o que faz. Responda naturalmente — pode ser em poucas frases. Ela monta tudo automaticamente.
+
+**Pronto.** Seu segundo cerebro esta configurado.
 
 ---
 
-## O que e criado
+## O que voce ganha
 
-| Item | Descricao |
+| Recurso | O que faz |
 |---|---|
-| **Estrutura de pastas** | Personalizada pro seu perfil |
-| **CLAUDE.md** | Sua identidade pro Claude — contexto permanente |
-| **Slash commands** | `/diario`, `/tldr` e comandos especificos do seu perfil |
-| **Memoria** | O Claude lembra entre conversas — preferencias, contexto, decisoes |
+| **Segundo cerebro organizado** | Estrutura de pastas pensada pro seu perfil — sem bagunca |
+| **IA personalizada** | O Claude sabe quem voce e, seus projetos e como voce trabalha |
+| **Comandos de produtividade** | Briefing diario, resumo de reuniao, gestao de deals, conteudo |
+| **Memoria persistente** | A IA lembra de conversas anteriores — sem repetir contexto |
 
 ---
 
-## Skills incluidas
+## Comandos disponiveis
 
-### Core (instaladas pelo /vault-setup)
+### Essenciais (ja vem instalados)
 
-| Skill | O que faz |
+| Comando | O que faz |
 |---|---|
-| `/vault-setup` | Configura o vault do zero |
-| `/vault-diario` | Comeca o dia com contexto — deals, prioridades, pendencias |
-| `/vault-tldr` | Salva resumo da sessao na pasta certa |
-| `/vault-deal` | Puxa contexto completo de um deal/oportunidade |
-| `/vault-reuniao` | Processa transcricao de reuniao — extrai pessoas, deals, acoes |
+| `/vault-setup` | Configura seu segundo cerebro do zero |
+| `/vault-diario` | Comeca o dia com contexto: deals, prioridades, pendencias |
+| `/vault-tldr` | Salva resumo da sessao automaticamente |
+| `/vault-deal` | Puxa contexto completo de uma oportunidade ou parceria |
+| `/vault-reuniao` | Processa transcricao de reuniao — extrai pessoas, decisoes, proximos passos |
 | `/vault-conteudo` | Desenvolve ideia de conteudo na sua voz |
 
-### Extras (instale as que quiser)
+### Extras (instale os que quiser)
 
-| Skill | O que faz | Dependencias |
+| Comando | O que faz | Precisa de |
 |---|---|---|
-| `/ghostwriter` | Escreve conteudo na voz de qualquer creator | Perfil de voz em `live skills/` |
-| `/transcribe` | Transcreve video de qualquer URL | `yt-dlp`, `faster-whisper`, `ffmpeg` |
-| `/youtube-remaker` | Pega video gringo, reescreve na sua voz, gera thumbs | `yt-dlp`, `faster-whisper`, Gemini API |
+| `/ghostwriter` | Escreve conteudo imitando a voz de qualquer creator | Perfil de voz configurado |
+| `/transcribe` | Transcreve video de qualquer plataforma | `yt-dlp`, `faster-whisper`, `ffmpeg` |
+| `/youtube-remaker` | Pega video gringo e reescreve na sua voz com thumbs | `yt-dlp`, `faster-whisper`, Gemini API |
 | `/nanobanana` | Gera slides e imagens com IA | Gemini API key |
 | `/thumb` | Baixa thumbnail HD do YouTube | `yt-dlp` |
-| `/kling-motion` | Anima imagens em video (estilo keynote) | Kling API keys |
+| `/kling-motion` | Anima imagens em video | Kling API keys |
 
-### Instalando uma skill extra
-
-Copie a pasta da skill para `.claude/skills/` no seu vault:
+Para instalar um extra:
 
 ```bash
-cp -r .claude/skills/transcribe ~/meu-vault/.claude/skills/
-```
-
-Para skills com dependencias, rode o install wizard:
-```
-/transcribe install
+cp -r brain-scott/.claude/skills/transcribe ~/meu-cerebro/.claude/skills/
 ```
 
 ---
 
-## Estrutura do repo
+## Pra quem e isso?
+
+- **Donos de negocio** que querem IA que entende o contexto da empresa
+- **Freelancers e consultores** que precisam organizar clientes, deals e projetos
+- **Criadores de conteudo** que querem produzir mais rapido sem perder a voz
+- **Devs** que querem documentar decisoes e manter contexto entre sessoes
+- **Qualquer pessoa** cansada de IA que nao lembra de nada
+
+---
+
+## Estrutura do projeto
 
 ```
-.claude/skills/          Todas as skills disponiveis
-  vault-setup/           O prompt principal de setup
-  vault-diario/          Skill de briefing diario
-  vault-tldr/            Skill de resumo de sessao
-  vault-conteudo/        Skill de conteudo
-  vault-deal/            Skill de deals
-  vault-reuniao/         Skill de reunioes
+.claude/skills/          Todos os comandos disponiveis
+  vault-setup/           Configurador do segundo cerebro
+  vault-diario/          Briefing diario
+  vault-tldr/            Resumo de sessao
+  vault-conteudo/        Producao de conteudo
+  vault-deal/            Gestao de deals
+  vault-reuniao/         Processamento de reunioes
   ghostwriter/           Ghostwriter multi-creator
   transcribe/            Transcricao de video
   youtube-remaker/       Remake de video do YouTube
@@ -131,14 +140,10 @@ CLAUDE.md.template       Template de referencia
 
 ---
 
-## Creditos
+## Licenca
 
-Projeto original: [cellovault](https://github.com/celoia/cellovault) por [@celoia](https://instagram.com/celoia)
-
-Adaptado e mantido por **Scott Studio** — [@ImScottDev](https://github.com/ImScottDev)
+MIT — use, modifique e distribua livremente.
 
 ---
 
-## Licenca
-
-MIT
+**Feito por [Scott Studio](https://github.com/ImScottDev)**

@@ -3,7 +3,7 @@ name: reuniao
 description: Processa transcrição de reunião — extrai pessoas, deals, decisões e próximas ações, salva em reunioes/.
 ---
 
-Receber a transcrição colada pelo Marcelo (ou arquivo já carregado do inbox/ via Fathom sync).
+Receber a transcrição colada pelo usuario (ou arquivo ja carregado do inbox/ via Fathom sync).
 
 Processar e extrair:
 1. **Participantes** — quem são, empresa, papel
@@ -24,17 +24,17 @@ YYYY-MM-DD-[pessoa-principal]-[contexto-curto].md
 
 Regras:
 - Máximo 4-5 "palavras" após a data
-- Usar o nome da pessoa principal da reunião (não Marcelo)
+- Usar o nome da pessoa principal da reuniao (nao o usuario)
 - Contexto curto = empresa ou tema central (1-2 palavras)
 - Tudo em minúsculas, sem acentos, separado por hífen
 
 Exemplos corretos:
-- `2026-03-16-helio-junior-o-metodo.md`
-- `2026-03-12-pedro-del-valle-conte.md`
-- `2026-03-16-madeline-nr1.md`
+- `2026-03-16-contato-a-reuniao.md`
+- `2026-03-12-contato-b-projeto.md`
+- `2026-03-16-contato-c-parceria.md`
 
 Exemplos incorretos (evitar):
-- `2026-03-16-helio-junior-o-metodo-pedro-conte.md` ← longo demais
+- `2026-03-16-contato-a-reuniao-contato-b-projeto.md` ← longo demais
 - `2026-03-16-impromptu-google-meet-meeting.md` ← nome genérico do Fathom
 
 ## Fluxo padrão — sempre executar automaticamente
